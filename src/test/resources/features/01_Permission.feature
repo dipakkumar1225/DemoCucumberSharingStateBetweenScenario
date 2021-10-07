@@ -1,6 +1,9 @@
 @Demo
 Feature: 01_Permission_Accept
 
+  Background: Share state between the scenario's
+    Given Check the state
+
   @Severity=critical
   Scenario: 01_Is AUT installed and click on chapter 1
     Given Check AUT is installed
