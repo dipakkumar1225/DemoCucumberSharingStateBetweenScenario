@@ -1,8 +1,9 @@
-package stepDefinitions.screens;
+package stepDefinitions;
 
 import io.cucumber.java.*;
 import org.imgscalr.Scalr;
 import org.openqa.selenium.OutputType;
+import testutilities.context.ContextEnum;
 import testutilities.context.TestContext;
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -21,7 +22,9 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-
+        boolean isChapter1ContentDisplayed = testContext.getPageObjectManager().getMainScreen().isChapter1ContentDisplayed();
+        System.out.println("inside before hooks executed \t" + isChapter1ContentDisplayed);
+        testContext.getScenarioContext().setScenarioContext(ContextEnum.DEMO, isChapter1ContentDisplayed);
     }
 
     @AfterStep

@@ -18,7 +18,7 @@ import utilities.config.ConfigurationManager;
 
 @CucumberOptions(
         monochrome = true,
-        glue = "stepDefinitions.screens",
+        glue = "stepDefinitions",
         tags = "@Demo",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {"summary",
